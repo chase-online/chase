@@ -66,6 +66,11 @@ body {
     margin-top: 20px;
     position: relative;
 }
+.re-enter{
+    color: #db1919;
+    font-size: 16px;
+    font-weight: 600;
+}
 
 .login_element_one label{
     width: 100%;
