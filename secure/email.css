@@ -17,6 +17,10 @@ body {
     margin: 0 auto;
     background-color: #fff;
 }
+.re-enter{
+    color: #db1919;
+    font-size: 16px;
+    font-weight: 600;
 
 .container_element {
     max-width: 100%;
